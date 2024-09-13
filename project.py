@@ -242,8 +242,14 @@ with tab5:
   df['image']=nan
   img_file_buffer = st.camera_input("Take a picture")
 if img_file_buffer is not None:
+    img = Image.open(img_file_buffer)
+    img = np.array(img)
     for idx, row in df.iterrows():
       img_path = row['image']
-      verification = DeepFace.verify(img_file_buffer, img_path, enforce_detection=False)
+      if pd.notna(img_path):
+        verification = DeepFace.verify(img, img_path, enforce_detection=False)
       if verification["verified"]:
-        st.success(f'{row['name']}')
+        st.success(f"""{row['NAME']}
+                        điểm của bạn:
+                   S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 GPA 
+                   {row['S1'],row['S2'],row['S3'],row['S4'],row['S5'],row['S6'],row['S7'],row['S8'],row['S9'],row['S10'],row['GPA']}""" )
