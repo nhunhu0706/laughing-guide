@@ -248,8 +248,18 @@ if img_file_buffer is not None:
       img_path = row['image']
       if pd.notna(img_path):
         verification = DeepFace.verify(img, img_path, enforce_detection=False)
-      if verification["verified"]:
-        st.success(f"""{row['NAME']}
-                        điểm của bạn:
-                   S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 GPA 
-                   {row['S1'],row['S2'],row['S3'],row['S4'],row['S5'],row['S6'],row['S7'],row['S8'],row['S9'],row['S10'],row['GPA']}""" )
+        if verification["verified"]:
+          st.success(f"""{row['NAME']}
+                          điểm của bạn:
+                    S1: {row['S1']}, 
+                    S2: {row['S2']}, 
+                    S3: {row['S3']}, 
+                    S4: {row['S4']},
+                    S5: {row['S5']},
+                    S6: {row['S6']},
+                    S7: {row['S7']},
+                    S8: {row['S8']},
+                    S9: {row['S9']},
+                    S10: {row['S10']},
+                    GPA: {row['GPA']}""" )
+
