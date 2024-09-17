@@ -2,4 +2,4 @@ streamlit
 Pillow
 deepface
 opencv-python-headless
-
+plotly
