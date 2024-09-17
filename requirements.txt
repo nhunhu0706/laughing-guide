@@ -1,10 +1,5 @@
-numpy
-pandas
 streamlit
-scikit-learn
-plotly
 Pillow
 deepface
-tensorflow
 opencv-python-headless
-matplotlib
+
