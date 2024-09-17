@@ -9,6 +9,6 @@ Hồ Võ Quỳnh Như
 - Phân tích số lượng học sinh
 - Phân tích điểm thi
 - Phân nhóm các học sinh bằng Kmeans
-- Logistic Regression
+- Logistic Regression, Classify
 ### Chức năng nâng cao
 - Cho phép học sinh đăng nhập xem điểm cá nhân bằng nhận dạng khuôn mặt
