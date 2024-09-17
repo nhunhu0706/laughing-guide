@@ -179,27 +179,27 @@ with tab3:
     fig1.update_layout(coloraxis_showscale=False)
     st.plotly_chart(fig1)
   
-    for i in range(k):
-      ix = np.where(y==i)
-      st.markdown(f"""
-                  **{lb[i]}**
-                  - GPA cao nhất <span style='color:red'>{df.loc[ix,'GPA'].max()}</span>
-                  - GPA thấp nhất <span style='color:green'>{df.loc[ix,'GPA'].min()}</span>
-                  - GPA trung bình <span style='color:blue'>{round(df.loc[ix,'GPA'].mean(),2)}</span>
-                  """, unsafe_allow_html=True)
-      cl1, cl2 = st.columns(2)
-      with cl1:
-        dfX.loc[ix[0],option]
-      with cl2:
-        if len(option)==2:
-          fig = px.scatter(dfX,x=dfX.iloc[ix[0],0],y=dfX.iloc[ix[0],1],hover_name=dfX.loc[ix,'NAME'],color=dfX.loc[ix,'GROUP'],labels={'x':f'{option[0]}','y':f'{option[1]}'})
-          fig.add_trace(go.Scatter(x=[centers[i][0]],y=[centers[i][1]],mode='markers',marker=dict(symbol="diamond", size=5, color='cyan'),name='center'))
-          st.plotly_chart(fig)
-        elif len(option)==3:
-          fdf = dfX.iloc[ix[0]]
-          fig1 = px.scatter_3d(fdf,x=fdf.iloc[:,0],y=fdf.iloc[:,1],z=fdf.iloc[:,2],color='GROUP',hover_name='NAME',labels={'x':f'{option[0]}','y':f'{option[1]}','z':f'{option[2]}'})
-          fig1.add_trace(go.Scatter3d(x=[centers[i][0]],y=[centers[i][1]],z=[centers[i][2]],mode='markers',marker=dict(symbol="diamond", size=5, color='cyan'),name='center'))
-          st.plotly_chart(fig1)
+  for i in range(k):
+    ix = np.where(y==i)
+    st.markdown(f"""
+                **{lb[i]}**
+                - GPA cao nhất <span style='color:red'>{df.loc[ix,'GPA'].max()}</span>
+                - GPA thấp nhất <span style='color:green'>{df.loc[ix,'GPA'].min()}</span>
+                - GPA trung bình <span style='color:blue'>{round(df.loc[ix,'GPA'].mean(),2)}</span>
+                """, unsafe_allow_html=True)
+    cl1, cl2 = st.columns(2)
+    with cl1:
+      dfX.loc[ix[0],option]
+    with cl2:
+      if len(option)==2:
+        fig = px.scatter(dfX,x=dfX.iloc[ix[0],0],y=dfX.iloc[ix[0],1],hover_name=dfX.loc[ix,'NAME'],color=dfX.loc[ix,'GROUP'],labels={'x':f'{option[0]}','y':f'{option[1]}'})
+        fig.add_trace(go.Scatter(x=[centers[i][0]],y=[centers[i][1]],mode='markers',marker=dict(symbol="diamond", size=5, color='cyan'),name='center'))
+        st.plotly_chart(fig)
+      elif len(option)==3:
+        fdf = dfX.iloc[ix[0]]
+        fig1 = px.scatter_3d(fdf,x=fdf.iloc[:,0],y=fdf.iloc[:,1],z=fdf.iloc[:,2],color='GROUP',hover_name='NAME',labels={'x':f'{option[0]}','y':f'{option[1]}','z':f'{option[2]}'})
+        fig1.add_trace(go.Scatter3d(x=[centers[i][0]],y=[centers[i][1]],z=[centers[i][2]],mode='markers',marker=dict(symbol="diamond", size=5, color='cyan'),name='center'))
+        st.plotly_chart(fig1)
 with tab4:
   options = st.multiselect('Chọn đặc trưng',['S6','S10','S-AVG'],['S6','S10','S-AVG'],key='unique_key_2')
   x = df[options]
