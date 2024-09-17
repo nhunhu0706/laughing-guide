@@ -4,3 +4,4 @@ deepface
 opencv-python-headless
 plotly
 scikit-learn
+tf-keras
