@@ -6,3 +6,4 @@ plotly
 Pillow
 deepface
 tensorflow
+opencv-python
