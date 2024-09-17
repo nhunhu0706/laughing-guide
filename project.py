@@ -4,7 +4,6 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.linear_model import LogisticRegression
-import cv2
 from PIL import Image
 from deepface import DeepFace
 
