@@ -2,7 +2,7 @@
 Hồ Võ Quỳnh Như
 # Thông tin project
 ## Đề tài: Phân tích điểm thi lớp Python4AI 092022
-## Các thư viện sử dụng: `numpy`, `matplotlib`, `scikit-learn`, `plotly`, `DeepFace`, `pillow`, `pandas`
+## Các thư viện sử dụng: `numpy`, `scikit-learn`, `plotly`, `Keras`, `pandas`
 ## Các chức năng:
 ### Chức năng cơ bản:
 - Danh sách học sinh
@@ -11,4 +11,4 @@ Hồ Võ Quỳnh Như
 - Phân nhóm các học sinh bằng Kmeans
 - Logistic Regression, Classify
 ### Chức năng nâng cao
-- Cho phép học sinh đăng nhập xem điểm cá nhân bằng nhận dạng khuôn mặt
+- Dự đoán việc học tiếp của học sinh
